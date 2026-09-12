@@ -61,23 +61,24 @@
     <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
       
       <a href="#home" class="flex items-center gap-3 group">
-  <!-- 你的 Logo 图片 -->
-  <img src="images/logo.jpg" 
-       alt="Cozy Crumb Cake Logo" 
-       class="w-8 h-8 md:w-10 md:h-10 object-contain transition-transform group-hover:scale-105">
-  
-  <!-- 品牌标题文字 -->
-  <span class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-brandText uppercase group-hover:opacity-80 transition">
-    Cozy Crumb Cake
-  </span>
-</a>
+        <!-- 你的 Logo 图片 -->
+        <img src="images/logo.jpg" 
+             alt="Cozy Crumb Cake Logo" 
+             class="w-8 h-8 md:w-10 md:h-10 object-contain transition-transform group-hover:scale-105">
+        
+        <!-- 品牌标题文字 -->
+        <span class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-brandText uppercase group-hover:opacity-80 transition">
+          Cozy Crumb Cake
+        </span>
+      </a>
 
       <!-- Right: Navigation Links & Social Icons -->
       <div class="flex items-center gap-6 md:gap-8">
         <nav>
           <ul class="flex items-center gap-5 sm:gap-7 text-sm font-medium tracking-wide text-brandText">
             <li><a href="#home" class="hover:text-brandAccent transition">Home</a></li>
-            <li><a href="#gallery" class="hover:text-brandAccent transition">Menu&Gallery</a></li>
+            <li><a href="#menu" class="hover:text-brandAccent transition">Menu</a></li>
+            <li><a href="#gallery" class="hover:text-brandAccent transition">Gallery</a></li>
             <li><a href="#contact" class="hover:text-brandAccent transition">Contact</a></li>
           </ul>
         </nav>
@@ -125,10 +126,60 @@
     </div>
   </section>
 
-  <!-- 2. Menu&Gallery Section -->
-  <section id="gallery" class="max-w-6xl mx-auto px-6 py-16">
+  <!-- 2. Menu Section (新增的单独Menu区域) -->
+  <section id="menu" class="max-w-6xl mx-auto px-6 py-16 border-t border-brandBorder/60">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Our Menu</h2>
+      <p class="text-brandMuted text-sm sm:text-base max-w-md mx-auto">Discover our crafted treats, signatures, and pricing options.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Menu Item 1 -->
+      <div class="bg-brandCard border border-brandBorder rounded-sm p-6 text-center hover:shadow-md transition">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-brandBg flex items-center justify-center">
+          <img src="images/menu-1.jpg" alt="Custom Cupcakes" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=200&auto=format&fit=crop'">
+        </div>
+        <h3 class="font-serif text-lg font-medium text-brandText mb-1">Custom Cupcakes</h3>
+        <p class="text-xs text-brandMuted mb-3">Buttercream artisanal cupcakes</p>
+        <span class="text-sm font-semibold text-brandAccent">From $35 / Box</span>
+      </div>
+
+      <!-- Menu Item 2 -->
+      <div class="bg-brandCard border border-brandBorder rounded-sm p-6 text-center hover:shadow-md transition">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-brandBg flex items-center justify-center">
+          <img src="images/menu-2.jpg" alt="Vintage Cakes" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200&auto=format&fit=crop'">
+        </div>
+        <h3 class="font-serif text-lg font-medium text-brandText mb-1">Vintage Custom Cakes</h3>
+        <p class="text-xs text-brandMuted mb-3">Maximalist vintage buttercream</p>
+        <span class="text-sm font-semibold text-brandAccent">From $65 / Cake</span>
+      </div>
+
+      <!-- Menu Item 3 -->
+      <div class="bg-brandCard border border-brandBorder rounded-sm p-6 text-center hover:shadow-md transition">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-brandBg flex items-center justify-center">
+          <img src="images/menu-3.jpg" alt="Seasonal Specials" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1587314168485-3236d6710814?w=200&auto=format&fit=crop'">
+        </div>
+        <h3 class="font-serif text-lg font-medium text-brandText mb-1">Seasonal Specials</h3>
+        <p class="text-xs text-brandMuted mb-3">Limited time seasonal flavors</p>
+        <span class="text-sm font-semibold text-brandAccent">From $40 / Box</span>
+      </div>
+
+      <!-- Menu Item 4 -->
+      <div class="bg-brandCard border border-brandBorder rounded-sm p-6 text-center hover:shadow-md transition">
+        <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-brandBg flex items-center justify-center">
+          <img src="images/menu-4.jpg" alt="Dessert Sets" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1519869325930-281384150729?w=200&auto=format&fit=crop'">
+        </div>
+        <h3 class="font-serif text-lg font-medium text-brandText mb-1">Party Dessert Sets</h3>
+        <p class="text-xs text-brandMuted mb-3">Perfect for gatherings & events</p>
+        <span class="text-sm font-semibold text-brandAccent">Inquire for Quote</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Gallery Section -->
+  <section id="gallery" class="max-w-6xl mx-auto px-6 py-16 border-t border-brandBorder/60">
     <div class="text-center mb-10">
-      <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Menu & Gallery</h2>
+      <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Gallery</h2>
       <p class="text-brandMuted text-sm sm:text-base max-w-md mx-auto">Explore our signatures, seasonal specials, and classic selections.</p>
       
       <!-- Category Filter Tabs -->
@@ -218,7 +269,7 @@
     </div>
   </section>
 
-  <!-- 3. Featured Section -->
+  <!-- 4. Featured Section -->
   <section class="bg-brandSectionBg my-12 py-16 px-6">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
       <div class="w-full md:w-1/2">
@@ -245,68 +296,68 @@
     </div>
   </section>
 
-  <!-- 4. Contact Section -->
-<section id="contact" class="py-16 sm:py-24 bg-brandBg text-center">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6">
-    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-brandText tracking-wide mb-3">Get in Touch</h2>
-    <div class="w-12 h-0.5 bg-brandAccent mx-auto mb-6"></div>
-    <p class="text-xs sm:text-sm text-brandMuted uppercase tracking-widest max-w-lg mx-auto mb-12">
-      Scan to discover more or reach out directly to place your order
-    </p>
+  <!-- 5. Contact Section -->
+  <section id="contact" class="py-16 sm:py-24 bg-brandBg text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-serif text-3xl sm:text-4xl font-normal text-brandText tracking-wide mb-3">Get in Touch</h2>
+      <div class="w-12 h-0.5 bg-brandAccent mx-auto mb-6"></div>
+      <p class="text-xs sm:text-sm text-brandMuted uppercase tracking-widest max-w-lg mx-auto mb-12">
+        Scan to discover more or reach out directly to place your order
+      </p>
 
-    <div class="bg-white p-8 sm:p-12 rounded-sm border border-brandBorder shadow-sm">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        
-        <!-- 左侧：传单文字联系方式 -->
-        <div class="space-y-4 text-left font-sans text-sm sm:text-base border-b md:border-b-0 md:border-r border-brandBorder/60 pb-8 md:pb-0 md:pr-8">
-          <div class="flex items-center space-x-3">
-            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Instagram:</span>
-            <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WhatsApp:</span>
-            <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WeChat:</span>
-            <span class="text-brandText select-all">COZYCRUMBCAKE</span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Email:</span>
-            <a href="mailto:COZYCRUMBCAKE@GMAIL.COM" class="text-brandText hover:text-brandAccent transition underline underline-offset-4">
-              COZYCRUMBCAKE@GMAIL.COM
-            </a>
-          </div>
-        </div>
-
-        <!-- 右侧：2个二维码区域 -->
-        <div>
-          <p class="text-xs uppercase font-semibold text-brandMuted tracking-wider mb-6 text-center">Scan to Connect</p>
-          <div class="flex justify-center items-center gap-6 sm:gap-8">
-            <!-- Instagram 二维码 -->
-            <div class="text-center">
-              <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
-                <!-- 替换为你本地或服务器上的 Instagram 二维码图片路径 -->
-                <img src="images/ins.png" alt="Instagram QR Code" class="w-full h-full object-contain">
-              </div>
-              <span class="text-xs text-brandMuted uppercase tracking-wider block">Instagram</span>
+      <div class="bg-white p-8 sm:p-12 rounded-sm border border-brandBorder shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          
+          <!-- 左侧：传单文字联系方式 -->
+          <div class="space-y-4 text-left font-sans text-sm sm:text-base border-b md:border-b-0 md:border-r border-brandBorder/60 pb-8 md:pb-0 md:pr-8">
+            <div class="flex items-center space-x-3">
+              <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Instagram:</span>
+              <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
             </div>
-
-            <!-- WeChat 二维码 -->
-            <div class="text-center">
-              <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
-                <!-- 替换为你本地或服务器上的 WeChat 二维码图片路径 -->
-                <img src="images/Weixin2.jpg" alt="WeChat QR Code" class="w-full h-full object-contain">
-              </div>
-              <span class="text-xs text-brandMuted uppercase tracking-wider block">WeChat</span>
+            <div class="flex items-center space-x-3">
+              <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WhatsApp:</span>
+              <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WeChat:</span>
+              <span class="text-brandText select-all">COZYCRUMBCAKE</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Email:</span>
+              <a href="mailto:COZYCRUMBCAKE@GMAIL.COM" class="text-brandText hover:text-brandAccent transition underline underline-offset-4">
+                COZYCRUMBCAKE@GMAIL.COM
+              </a>
             </div>
           </div>
-        </div>
 
+          <!-- 右侧：2个二维码区域 -->
+          <div>
+            <p class="text-xs uppercase font-semibold text-brandMuted tracking-wider mb-6 text-center">Scan to Connect</p>
+            <div class="flex justify-center items-center gap-6 sm:gap-8">
+              <!-- Instagram 二维码 -->
+              <div class="text-center">
+                <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
+                  <!-- 替换为你本地或服务器上的 Instagram 二维码图片路径 -->
+                  <img src="images/ins.png" alt="Instagram QR Code" class="w-full h-full object-contain">
+                </div>
+                <span class="text-xs text-brandMuted uppercase tracking-wider block">Instagram</span>
+              </div>
+
+              <!-- WeChat 二维码 -->
+              <div class="text-center">
+                <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
+                  <!-- 替换为你本地或服务器上的 WeChat 二维码图片路径 -->
+                  <img src="images/Weixin2.jpg" alt="WeChat QR Code" class="w-full h-full object-contain">
+                </div>
+                <span class="text-xs text-brandMuted uppercase tracking-wider block">WeChat</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer class="border-t border-brandBorder py-8 px-6 text-center text-xs text-brandMuted bg-brandBg">
