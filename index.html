@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COZY CRUMB CAKE | Artisan Cupcakes & Treats</title>
+
+  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#FBF8F3',
+            brandCard: '#FFFFFF',
+            brandText: '#2C2825',
+            brandMuted: '#7A726C',
+            brandAccent: '#A36A5B',
+            brandAccentHover: '#845244',
+            brandBorder: '#EBE5DF',
+            brandSectionBg: '#F4EFEA',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #FBF8F3;
+      color: #2C2825;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    /* Modal Backdrop Animation */
+    .fade-in {
+      animation: fadeIn 0.25s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.96); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 bg-[#FBF8F3]/90 backdrop-blur-md border-b border-brandBorder/60 transition-all">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <!-- Left: Brand Logo -->
+      <a href="#home" class="font-serif text-2xl md:text-3xl font-bold tracking-wider text-brandText uppercase hover:opacity-80 transition">
+        Cozy Crumb Cake
+      </a>
+
+      <!-- Right: Navigation Links & Social Icons -->
+      <div class="flex items-center gap-6 md:gap-8">
+        <nav>
+          <ul class="flex items-center gap-5 sm:gap-7 text-sm font-medium tracking-wide text-brandText">
+            <li><a href="#home" class="hover:text-brandAccent transition">Home</a></li>
+            <li><a href="#gallery" class="hover:text-brandAccent transition">Menu&Gallery</a></li>
+            <li><a href="#contact" class="hover:text-brandAccent transition">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="h-4 w-[1px] bg-brandBorder hidden sm:block"></div>
+
+        <!-- Social Icons -->
+        <div class="flex items-center gap-3 text-brandText">
+          <!-- Instagram Link -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+             title="Follow us on Instagram"
+             class="p-2 rounded-full hover:bg-brandBorder/50 hover:text-brandAccent transition-colors">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+
+          <!-- WeChat Button (Triggers Modal) -->
+          <button onclick="openWeChatModal()" 
+                  title="Connect on WeChat"
+                  class="p-2 rounded-full hover:bg-brandBorder/50 hover:text-brandAccent transition-colors focus:outline-none">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.062 5.558l-.77 2.296 2.737-1.347c1.112.308 2.304.475 3.542.475 4.8 0 8.691-3.288 8.691-7.342 0-4.054-3.891-7.342-8.691-7.342zm-2.47 4.103c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm5.08 0c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm6.183 5.438c-3.993 0-7.23 2.737-7.23 6.113 0 3.376 3.237 6.113 7.23 6.113 1.031 0 2.022-.181 2.946-.512l2.278 1.121-.641-1.911c1.574-1.128 2.548-2.784 2.548-4.628 0-3.376-3.237-6.113-7.231-6.113zm-2.054 3.418c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907zm4.228 0c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section id="home" class="max-w-6xl mx-auto px-6 pt-10 pb-16 text-center">
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-tight text-brandText mb-5">
+      Handcrafted Cupcakes,<br>Made for Cozy Moments
+    </h1>
+    <p class="font-sans text-base sm:text-lg text-brandMuted max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+      Baked daily in small batches with premium organic butter, seasonal berries, and pure Madagascar vanilla. Bringing sweetness and warmth to your daily moments.
+    </p>
+    <div class="relative overflow-hidden rounded-md shadow-lg group">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1400&auto=format&fit=crop" 
+           alt="Cozy Crumb Cake Showcase" 
+           class="w-full h-[320px] sm:h-[450px] md:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105">
+      <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+    </div>
+  </section>
+
+  <!-- 2. Menu&Gallery Section -->
+  <section id="gallery" class="max-w-6xl mx-auto px-6 py-16">
+    <div class="text-center mb-10">
+      <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Menu & Gallery</h2>
+      <p class="text-brandMuted text-sm sm:text-base max-w-md mx-auto">Explore our signatures, seasonal specials, and classic selections.</p>
+      
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
+        <button onclick="filterGallery('all', this)" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-brandAccent text-white">All</button>
+        <button onclick="filterGallery('classic', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Classics</button>
+        <button onclick="filterGallery('seasonal', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Seasonal</button>
+        <button onclick="filterGallery('special', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Special Custom</button>
+      </div>
+    </div>
+
+    <!-- Product Cards Grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="gallery-item classic bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&auto=format&fit=crop" alt="Red Velvet Romance" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Classic</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Red Velvet Romance</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Cocoa-infused red sponge topped with smooth cream cheese frosting & cake crumbs.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=600&auto=format&fit=crop" alt="Salted Caramel Crunch" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Salted Caramel Crunch</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Rich chocolate base filled with house-made salted caramel and toasted pecans.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="gallery-item classic bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=600&auto=format&fit=crop" alt="Madagascar Vanilla" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Classic</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Madagascar Vanilla</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Fluffy vanilla bean sponge crowned with light, whipped buttercream swirl.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="gallery-item seasonal bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&auto=format&fit=crop" alt="Strawberry Blossom" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Seasonal</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Strawberry Blossom</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Fresh organic strawberry reduction folded into delicate vanilla cream icing.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="gallery-item seasonal bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&auto=format&fit=crop" alt="Matcha Pistachio" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Seasonal</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Matcha Pistachio</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Uji matcha infused sponge with crushed Sicilian pistachios and subtle cream.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&auto=format&fit=crop" alt="Lemon Lavender Spark" class="w-full h-72 object-cover transition duration-500 hover:scale-105">
+        </div>
+        <div class="p-6 text-center">
+          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
+          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Lemon Lavender Spark</h3>
+          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Zesty lemon curd core with culinary lavender whipped frosting.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Featured Section -->
+  <section class="bg-brandSectionBg my-12 py-16 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14">
+      <div class="w-full md:w-1/2">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&auto=format&fit=crop" 
+             alt="Fresh Cupcake Baking" 
+             class="w-full h-[350px] sm:h-[420px] object-cover rounded-sm shadow-md">
+      </div>
+      <div class="w-full md:w-1/2 text-left">
+        <h3 class="font-serif text-3xl sm:text-4xl font-medium mb-5 text-brandText leading-tight">
+          Freshly Baked Daily With Local Passion
+        </h3>
+        <p class="text-brandMuted text-base mb-6 leading-relaxed">
+          At Cozy Crumb Cake, every single cupcake is crafted with attention to taste and texture. We believe in simplicity, honest ingredients, and creating delicious memories for your birthdays, gatherings, or tea times.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#contact" class="inline-block bg-brandAccent hover:bg-brandAccentHover text-white text-xs sm:text-sm font-medium tracking-wider uppercase py-3.5 px-7 rounded-sm transition">
+            Inquire For Orders
+          </a>
+          <button onclick="openWeChatModal()" class="inline-flex items-center gap-2 border border-brandBorder bg-white hover:border-brandAccent text-brandText text-xs sm:text-sm font-medium tracking-wider uppercase py-3.5 px-6 rounded-sm transition">
+            WeChat Order
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Contact Section -->
+  <section id="contact" class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Get in Touch</h2>
+    <p class="text-brandMuted text-sm sm:text-base mb-10 max-w-lg mx-auto">
+      Planning a custom order or have questions about flavors and availability? Send us a message below or connect directly on social media.
+    </p>
+
+    <!-- Interactive Contact Form -->
+    <form onsubmit="handleFormSubmit(event)" class="bg-white p-8 sm:p-10 rounded-sm border border-brandBorder shadow-sm text-left">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Your Name</label>
+          <input type="text" required placeholder="Jane Doe" 
+                 class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30">
+        </div>
+        <div>
+          <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Email or Phone</label>
+          <input type="text" required placeholder="jane@example.com" 
+                 class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30">
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Event Date / Inquiry Details</label>
+        <textarea rows="4" required placeholder="Tell us about your event, quantity, preferred flavors, or pickup date..." 
+                  class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30 resize-none"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-brandAccent hover:bg-brandAccentHover text-white text-xs sm:text-sm font-semibold tracking-wider uppercase py-4 rounded-sm transition shadow-sm">
+        Send Message to Cozy Crumb Cake
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brandBorder py-8 px-6 text-center text-xs text-brandMuted bg-brandBg">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2026 COZY CRUMB CAKE. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com" target="_blank" class="hover:text-brandAccent transition">Instagram</a>
+        <span>•</span>
+        <button onclick="openWeChatModal()" class="hover:text-brandAccent transition">WeChat ID</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WeChat Pop-up Modal -->
+  <div id="wechat-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-md max-w-sm w-full p-6 text-center shadow-2xl relative fade-in border border-brandBorder">
+      <!-- Close Button -->
+      <button onclick="closeWeChatModal()" class="absolute top-3 right-3 text-brandMuted hover:text-brandText p-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="w-12 h-12 bg-[#07C160]/10 text-[#07C160] rounded-full flex items-center justify-center mx-auto mb-3">
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.062 5.558l-.77 2.296 2.737-1.347c1.112.308 2.304.475 3.542.475 4.8 0 8.691-3.288 8.691-7.342 0-4.054-3.891-7.342-8.691-7.342zm-2.47 4.103c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm5.08 0c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm6.183 5.438c-3.993 0-7.23 2.737-7.23 6.113 0 3.376 3.237 6.113 7.23 6.113 1.031 0 2.022-.181 2.946-.512l2.278 1.121-.641-1.911c1.574-1.128 2.548-2.784 2.548-4.628 0-3.376-3.237-6.113-7.231-6.113zm-2.054 3.418c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907zm4.228 0c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907z"/>
+        </svg>
+      </div>
+
+      <h3 class="font-serif text-xl font-semibold text-brandText mb-1">Connect on WeChat</h3>
+      <p class="text-xs text-brandMuted mb-4">Scan QR or copy WeChat ID to order</p>
+
+      <!-- Simulated WeChat QR Code -->
+      <div class="bg-brandBg border border-brandBorder p-3 rounded-md inline-block mb-4">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=CozyCrumbCake_TO&color=2C2825&bgcolor=FBF8F3" 
+             alt="WeChat QR Code" 
+             class="w-36 h-36 mx-auto">
+      </div>
+
+      <div class="bg-brandBg border border-brandBorder rounded-sm p-2.5 flex items-center justify-between mb-2">
+        <span class="text-xs text-brandMuted">WeChat ID:</span>
+        <span id="wechat-id" class="text-sm font-semibold text-brandText font-mono">CozyCrumbCake_TO</span>
+      </div>
+
+      <button id="copy-btn" onclick="copyWeChatID()" 
+              class="w-full bg-[#07C160] hover:bg-[#06a853] text-white text-xs font-semibold py-2.5 rounded-sm transition">
+        Copy WeChat ID
+      </button>
+      <span id="copy-toast" class="block text-[11px] text-[#07C160] mt-2 font-medium hidden">✓ Copied to clipboard!</span>
+    </div>
+  </div>
+
+  <script>
+    // 1. Gallery Category Filter Logic
+    function filterGallery(category, btn) {
+      // Update active button state
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-brandAccent', 'text-white', 'active');
+        b.classList.add('bg-white', 'border', 'border-brandBorder', 'text-brandMuted');
+      });
+      btn.classList.remove('bg-white', 'border', 'border-brandBorder', 'text-brandMuted');
+      btn.classList.add('bg-brandAccent', 'text-white', 'active');
+
+      // Filter gallery items
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. WeChat Modal Functions
+    function openWeChatModal() {
+      document.getElementById('wechat-modal').classList.remove('hidden');
+    }
+
+    function closeWeChatModal() {
+      document.getElementById('wechat-modal').classList.add('hidden');
+      document.getElementById('copy-toast').classList.add('hidden');
+      document.getElementById('copy-btn').innerText = "Copy WeChat ID";
+    }
+
+    // 3. Copy WeChat ID
+    function copyWeChatID() {
+      const textToCopy = document.getElementById('wechat-id').innerText;
+      
+      // ExecCommand fallback for iframe preview compatibility
+      const tempInput = document.createElement('input');
+      tempInput.value = textToCopy;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      // Feedback state
+      document.getElementById('copy-btn').innerText = "Copied!";
+      document.getElementById('copy-toast').classList.remove('hidden');
+    }
+
+    // 4. Form Submit Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert("Thank you for your message! Cozy Crumb Cake will respond shortly.");
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
