@@ -246,36 +246,67 @@
   </section>
 
   <!-- 4. Contact Section -->
-  <section id="contact" class="max-w-3xl mx-auto px-6 py-16 text-center">
-    <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Get in Touch</h2>
-    <p class="text-brandMuted text-sm sm:text-base mb-10 max-w-lg mx-auto">
-      Planning a custom order or have questions about flavors and availability? Send us a message below or connect directly on social media.
+<section id="contact" class="py-16 sm:py-24 bg-brandBg text-center">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-brandText tracking-wide mb-3">Get in Touch</h2>
+    <div class="w-12 h-0.5 bg-brandAccent mx-auto mb-6"></div>
+    <p class="text-xs sm:text-sm text-brandMuted uppercase tracking-widest max-w-lg mx-auto mb-12">
+      Scan to discover more or reach out directly to place your order
     </p>
 
-    <!-- Interactive Contact Form -->
-    <form onsubmit="handleFormSubmit(event)" class="bg-white p-8 sm:p-10 rounded-sm border border-brandBorder shadow-sm text-left">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Your Name</label>
-          <input type="text" required placeholder="Jane Doe" 
-                 class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30">
+    <div class="bg-white p-8 sm:p-12 rounded-sm border border-brandBorder shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        
+        <!-- 左侧：传单文字联系方式 -->
+        <div class="space-y-4 text-left font-sans text-sm sm:text-base border-b md:border-b-0 md:border-r border-brandBorder/60 pb-8 md:pb-0 md:pr-8">
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Instagram:</span>
+            <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WhatsApp:</span>
+            <span class="text-brandText select-all">COZYCRUMBCAKE_TORONTO</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">WeChat:</span>
+            <span class="text-brandText select-all">COZYCRUMBCAKE</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <span class="font-semibold text-brandAccent uppercase text-xs tracking-wider w-24">Email:</span>
+            <a href="mailto:COZYCRUMBCAKE@GMAIL.COM" class="text-brandText hover:text-brandAccent transition underline underline-offset-4">
+              COZYCRUMBCAKE@GMAIL.COM
+            </a>
+          </div>
         </div>
+
+        <!-- 右侧：2个二维码区域 -->
         <div>
-          <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Email or Phone</label>
-          <input type="text" required placeholder="jane@example.com" 
-                 class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30">
+          <p class="text-xs uppercase font-semibold text-brandMuted tracking-wider mb-6 text-center">Scan to Connect</p>
+          <div class="flex justify-center items-center gap-6 sm:gap-8">
+            <!-- Instagram 二维码 -->
+            <div class="text-center">
+              <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
+                <!-- 替换为你本地或服务器上的 Instagram 二维码图片路径 -->
+                <img src="images/ins.png" alt="Instagram QR Code" class="w-full h-full object-contain">
+              </div>
+              <span class="text-xs text-brandMuted uppercase tracking-wider block">Instagram</span>
+            </div>
+
+            <!-- WeChat 二维码 -->
+            <div class="text-center">
+              <div class="w-28 h-28 sm:w-32 sm:32 border border-brandBorder p-2 bg-white rounded-sm shadow-xs mx-auto mb-2">
+                <!-- 替换为你本地或服务器上的 WeChat 二维码图片路径 -->
+                <img src="images/Weixin2.jpg" alt="WeChat QR Code" class="w-full h-full object-contain">
+              </div>
+              <span class="text-xs text-brandMuted uppercase tracking-wider block">WeChat</span>
+            </div>
+          </div>
         </div>
+
       </div>
-      <div class="mb-6">
-        <label class="block text-xs uppercase font-semibold text-brandMuted tracking-wider mb-2">Event Date / Inquiry Details</label>
-        <textarea rows="4" required placeholder="Tell us about your event, quantity, preferred flavors, or pickup date..." 
-                  class="w-full px-4 py-3 text-sm border border-brandBorder rounded-sm focus:outline-none focus:border-brandAccent bg-brandBg/30 resize-none"></textarea>
-      </div>
-      <button type="submit" class="w-full bg-brandAccent hover:bg-brandAccentHover text-white text-xs sm:text-sm font-semibold tracking-wider uppercase py-4 rounded-sm transition shadow-sm">
-        Send Message to Cozy Crumb Cake
-      </button>
-    </form>
-  </section>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="border-t border-brandBorder py-8 px-6 text-center text-xs text-brandMuted bg-brandBg">
