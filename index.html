@@ -180,128 +180,24 @@
   </section>
 
 
-  <!-- 3. Gallery Section -->
+  <!-- 3. Gallery Section (支持从子文件夹调用，点击Tab丝滑切换查看) -->
   <section id="gallery" class="max-w-6xl mx-auto px-6 py-16 border-t border-brandBorder/60">
     <div class="text-center mb-10">
       <h2 class="font-serif text-3xl sm:text-4xl font-medium mb-3 text-brandText">Gallery</h2>
-      <p class="text-brandMuted text-sm sm:text-base max-w-md mx-auto">Explore our signatures, seasonal specials, and classic selections.Find more on our Instagram!</p>
+      <p class="text-brandMuted text-sm sm:text-base max-w-md mx-auto">Explore our signatures, seasonal specials, and classic selections. Find more on our Instagram!</p>
       
       <!-- Category Filter Tabs -->
       <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8">
         <button onclick="filterGallery('all', this)" class="filter-btn active px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-brandAccent text-white">All</button>
         <button onclick="filterGallery('classic', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Classics</button>
-        <button onclick="filterGallery('seasonal', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Seasonal</button>
         <button onclick="filterGallery('special', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Special Custom</button>
+        <button onclick="filterGallery('seasonal', this)" class="filter-btn px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition tracking-wider uppercase bg-white border border-brandBorder text-brandMuted hover:border-brandAccent hover:text-brandAccent">Seasonal</button>
       </div>
     </div>
 
-    <!-- Product Cards Grid -->
+    <!-- Product Cards Grid (由 JavaScript 动态根据文件夹图片生成) -->
     <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Card 1 Classic -->
-      <div class="gallery-item classic bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/cupcake box.jpg" alt="Cupcake Dozen" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Classic</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Classic Cupcake Dozen</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">A beautiful box of 12 freshly baked, handcrafted cupcakes featuring a delightful variety of our favorite flavors. Securely packed and ready to sweeten any gathering or special occasion..</p>
-        </div>
-      </div>
-
-      <!-- Card 2 Special-->
-      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/custom1.jpg" alt="Custom Cupcake" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Custom Vintage Cupcake</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">A stunning assortment of custom cupcakes styled with romantic ruffles, bows, and intricate floral piping. The ultimate treat for birthdays, high teas, or any moment worth celebrating.</p>
-        </div>
-      </div>
-
-      <!-- Card 3 Classic-->
-      <div class="gallery-item classic bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/Box cake 2.jpg" alt="Box Cake 2" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Classic</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Box Cake</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">A delicious 3.7"x3.7" multi-layer fluffy box cake with smooth buttercream, and decadent fillings. Perfectly portioned, fresh, and convenient for any sweet craving. Each box cake weight more than 1lb .</p>
-        </div>
-      </div>
-
-     
-
-      <!-- Card 4 Special-->
-      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/custom2.jpg" alt="Custom Maximalism Styple Cake" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Custom Maximalism Styple Cake</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">A breathtaking two-tier masterpiece featuring intricate vintage Lambeth piping, delicate botanical details, and two adorable custom cat figurines on top. A magical blend of fairy-tale charm and old-world elegance for your most unforgettable milestones.</p>
-        </div>
-      </div>
-
-      <!-- Card 5 Special-->
-      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/custom3.jpg" alt="Ethereal Blossom Box Cake" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Ethereal Blossom Box Cake</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Elegant, romantic, and meticulously crafted. This bespoke rectangular cake features cascading 3D floral art, soft pastel accents, and vintage piping—a true feast for both the eyes and the soul.</p>
-        </div>
-      </div>
-
-      <!-- Card 8 Special-->
-      <div class="gallery-item special bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="images/CUSTOM_CAKE.jpg" alt="Ethereal Blossom Box Cake" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Special Custom</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Custom Double Layer Cake</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">An exquisite vintage-style two-tier cake adorned with cherubs and hand-piped florals. Filled with a unique combination of sweet Coconut Mango Sticky Rice and classic Oreo crunch.</p>
-        </div>
-      </div>
-
-
-
-       <!-- Card 6 Seasonal-->
-      <div class="gallery-item seasonal bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&auto=format&fit=crop" alt="Strawberry Blossom" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Seasonal</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Coming Soon</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">..</p>
-        </div>
-      </div>
-
-      <!-- Card 7 Seasonal-->
-      <div class="gallery-item seasonal hidden bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&auto=format&fit=crop" alt="Matcha Pistachio" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
-        </div>
-        <div class="p-6 text-center">
-          <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">Seasonal</span>
-          <h3 class="font-serif text-xl font-medium mb-2 text-brandText">Matcha Pistachio</h3>
-          <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">Uji matcha infused sponge with crushed Sicilian pistachios and subtle cream.</p>
-        </div>
-      </div>
-
-
-
-
-      
+      <!-- 自动渲染区域 -->
     </div>
   </section>
 
@@ -415,7 +311,7 @@
 
       <div class="w-12 h-12 bg-[#07C160]/10 text-[#07C160] rounded-full flex items-center justify-center mx-auto mb-3">
         <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.062 5.558l-.77 2.296 2.737-1.347c1.112.308 2.304.475 3.542.475 4.8 0 8.691-3.288 8.691-7.342 0-4.054-3.891-7.342-8.691-7.342zm-2.47 4.103c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm5.08 0c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm6.183 5.438c-3.993 0-7.23 2.737-7.23 6.113 0 3.376 3.237 6.113 7.23 6.113 1.031 0 2.022-.181 2.946-.512l2.278 1.121-.641-1.911c1.574-1.128 2.548-2.784 2.548-4.628 0-3.376-3.237-6.113-7.231-6.113zm-2.054 3.418c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907zm4.228 0c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907z"/>
+          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.062 5.558l-.77 2.296 2.737-1.347c1.112.308 2.304.475 3.542.475 4.8 0 8.691-3.288 8.691-7.342 0-4.054-3.891-7.342-8.691-7.342zm-2.47 4.103c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm5.08 0c.602 0 1.09.488 1.09 1.09s-.488 1.09-1.09 1.09c-.602 0-1.09-.488-1.09-1.09s.488-1.09 1.09-1.09zm6.183 5.438c-3.993 0-7.23 2.737-7.23 6.113 0 3.376 3.237 6.113 7.23 6.113 1.031 0 2.022-.181 2.946-.512l2.278 1.121-.641-1.911c1.574-1.128 2.548-2.784 2.548-4.628 0-3.376-3.237-6.113-7.231-6.113zm-2.054 3.418c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907zm4.228 0c-.501 0-.907-.406-.907-.907 0-.501.406-.907.907-.907s.907.406.907.907c0 .501-.406.907-.907.907z"/>
         </svg>
       </div>
 
@@ -443,7 +339,101 @@
   </div>
 
   <script>
-    // 1. Gallery Category Filter Logic
+    // =========================================================================
+    // 📁 Gallery 子文件夹图片管理配置数据源
+    // =========================================================================
+    // 💡 以后更新：你在 images/ 下建了三个文件夹：classic/, seasonal/, special/ (对应 custom)
+    // 每次放完照片，只需在这里按格式加一行，指定它在哪一个子文件夹、叫什么名字即可！
+    const galleryItems = [
+      {
+        image: "images/classic/cupcake box.jpg",
+        category: "classic",
+        categoryName: "Classic",
+        title: "Classic Cupcake Dozen",
+        desc: "A beautiful box of 12 freshly baked, handcrafted cupcakes featuring a delightful variety of our favorite flavors. Securely packed and ready to sweeten any gathering or special occasion."
+      },
+      {
+        image: "images/classic/Box cake 2.jpg",
+        category: "classic",
+        categoryName: "Classic",
+        title: "Box Cake",
+        desc: "A delicious 3.7\"x3.7\" multi-layer fluffy box cake with smooth buttercream, and decadent fillings. Each box cake weight more than 1lb ."
+      },
+      {
+        image: "images/special/custom1.jpg",
+        category: "special",
+        categoryName: "Special Custom",
+        title: "Custom Vintage Cupcake",
+        desc: "A stunning assortment of custom cupcakes styled with romantic ruffles, bows, and intricate floral piping. The ultimate treat for birthdays, high teas, or any moment worth celebrating."
+      },
+      {
+        image: "images/special/custom2.jpg",
+        category: "special",
+        categoryName: "Special Custom",
+        title: "Custom Maximalism Style Cake",
+        desc: "A breathtaking two-tier masterpiece featuring intricate vintage Lambeth piping, delicate botanical details, and two adorable custom cat figurines on top."
+      },
+      {
+        image: "images/special/custom3.jpg",
+        category: "special",
+        categoryName: "Special Custom",
+        title: "Ethereal Blossom Box Cake",
+        desc: "Elegant, romantic, and meticulously crafted. This bespoke rectangular cake features cascading 3D floral art, soft pastel accents, and vintage piping."
+      },
+      {
+        image: "images/special/CUSTOM_CAKE.jpg",
+        category: "special",
+        categoryName: "Special Custom",
+        title: "Custom Double Layer Cake",
+        desc: "An exquisite vintage-style two-tier cake adorned with cherubs and hand-piped florals. Filled with a unique combination of sweet Coconut Mango Sticky Rice."
+      },
+      {
+        image: "images/special/custom4.jpg",
+        category: "special",
+        categoryName: "Special Custom",
+        title: "Pumpkin Chestnut Cake",
+        desc: "A delightful autumnal creation featuring the rich flavors of pumpkin and chestnut, a perfect wrapped-up treat for the season."
+      },
+
+      {
+        image: "images/seasonal/Soon.jpg",
+        category: "seasonal",
+        categoryName: "Seasonal",
+        title: "Coming Soon",
+        desc: "..."
+      }
+    ];
+
+    // 动态渲染 Gallery 网格
+    function renderGallery(category) {
+      const grid = document.getElementById('gallery-grid');
+      grid.innerHTML = '';
+
+      const filteredItems = category === 'all' 
+        ? galleryItems 
+        : galleryItems.filter(item => item.category === category);
+
+      filteredItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = `gallery-item ${item.category} bg-brandCard border border-brandBorder rounded-sm overflow-hidden transition duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col`;
+        
+        card.innerHTML = `
+          <div class="overflow-hidden">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-80 object-cover transition duration-500 hover:scale-105">
+          </div>
+          <div class="p-6 text-center flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] uppercase font-semibold tracking-widest text-brandAccent bg-brandBg px-2.5 py-1 rounded-full inline-block mb-3">${item.categoryName}</span>
+              <h3 class="font-serif text-xl font-medium mb-2 text-brandText">${item.title}</h3>
+              <p class="text-brandMuted text-xs sm:text-sm leading-relaxed">${item.desc}</p>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Tab 切换逻辑
     function filterGallery(category, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => {
         b.classList.remove('bg-brandAccent', 'text-white', 'active');
@@ -452,20 +442,13 @@
       btn.classList.remove('bg-white', 'border', 'border-brandBorder', 'text-brandMuted');
       btn.classList.add('bg-brandAccent', 'text-white', 'active');
 
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (item.classList.contains('hidden')) {
-          item.style.display = 'none';
-          return;
-        }
-        
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
+      renderGallery(category);
     }
+
+    // 页面初次加载时渲染全部
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGallery('all');
+    });
 
     // 2. WeChat Modal Functions
     function openWeChatModal() {
