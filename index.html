@@ -434,7 +434,7 @@
       },
 
       {
-        image: "assets/images/seasonal/halloween-special-cupcake.png",
+        image: "assets/images/seasonal/halloween-special-cupcake-six.png",
         category: "seasonal",
         categoryName: "Seasonal",
         title: "Halloween Special Cupcake",
@@ -455,7 +455,7 @@
       document.getElementById('gallery-detail').showModal();
     }
     function renderGallery(category=galleryCategory){
-      galleryCategory=category;const list=galleryItems.filter(i=>category==='all'||i.category===category),size=gallerySize(),pages=Math.max(1,Math.ceil(list.length/size));galleryPage=Math.max(1,Math.min(galleryPage,pages));const start=(galleryPage-1)*size;const grid=document.getElementById('gallery-grid');grid.classList.toggle('gallery-single-page',pages===1);grid.replaceChildren();
+      galleryCategory=category;const list=category==='all'?[...galleryItems.filter(i=>i.category==='seasonal'),...galleryItems.filter(i=>i.category!=='seasonal')]:galleryItems.filter(i=>i.category===category),size=gallerySize(),pages=Math.max(1,Math.ceil(list.length/size));galleryPage=Math.max(1,Math.min(galleryPage,pages));const start=(galleryPage-1)*size;const grid=document.getElementById('gallery-grid');grid.classList.toggle('gallery-single-page',pages===1);grid.replaceChildren();
       list.slice(start,start+size).forEach(item=>{
         const card=document.createElement('article');card.className='gallery-card gallery-item';const photo=document.createElement('button');photo.type='button';photo.className='gallery-photo';photo.setAttribute('aria-label','View '+item.title);
         const image=document.createElement('img');image.src=item.image;image.alt=item.title;image.loading='lazy';if(item.title==='Halloween Special Cupcake')image.className='seasonal-collage';photo.append(image);
